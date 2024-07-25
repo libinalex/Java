@@ -1,0 +1,1200 @@
+public class NeoPAT {
+    
+}
+
+Carrom
+
+A board
+game called
+Carrom is
+played by
+
+two players (teams). It is made up of a red coin, nine black coins, and nine white coins. The first team to spend every
+
+coin wins (given that the red has been pocketed by one of the teams). The number of leftover coins from the losing team on the board determines how many points are given. The winning team receives an additional 5 points if they have successfully pocketed the red.
+
+
+Write a program to calculate the final round winners score.
+
+    Display the total points ,the winning team receives an additional 5 points if they have successfully pocketed
+
+the red (character(r))
+    Display "Invalid Input" if there are less than one or more than nine coins still on the board.
+
+Input format :
+
+The first line of the input consists of an integer.
+
+The second line of the input consists of the character (r).
+Output format :
+
+The output displays the number that corresponds to the total points won.
+
+
+Refer to the sample input and output for format specifications.
+Sample test cases :
+Input 1 :
+
+5
+r
+
+Output 1 :
+
+10
+
+Input 2 :
+
+2
+n
+
+Output 2 :
+
+2
+
+Input 3 :
+
+-1
+
+Output 3 :
+
+Invalid Input
+
+import java.io.*;
+import java.util.*;
+class Carrom {
+	public static void main(String [] args) {
+		int number;
+		char c;
+		Scanner sc = new Scanner(System.in);
+		number = sc.nextInt();
+		if(number < 1 || number>9) {
+			System.out.println("Invalid Input");
+		}
+		else {
+		c = sc.next().charAt(0);
+		
+			if(Character.compare(c, 'r') == 0) {
+				System.out.println(number+5);
+			}
+			else {
+				System.out.println(number);
+			}
+		}
+	}
+}
+
+
+
+
+//2
+Given an array of numbers. Give an algorithm for finding the first element in the array which is repeated.
+Input format :
+
+The first line of the input consists of the value of n.
+
+The second line of the input consists of the array elements.
+Output format :
+
+The output prints the first repeated element in the array.
+
+
+Refer to the sample input and output for format specifications.
+Sample test cases :
+Input 1 :
+
+7
+10 5 3 5 3 4 6
+
+Output 1 :
+
+The first repeating element is 5
+
+Input 2 :
+
+5
+1 5 6 8 7
+
+Output 2 :
+
+There are no repeating elements
+
+Input 3 :
+
+8
+5 2 4 6 7 2 4 5
+
+Output 3 :
+
+The first repeating element is 5
+
+//3
+
+Given an array of elements. Find two elements in the array such that their sum is equal to the given element K.
+Input format :
+
+The first line of the input consists of the value of n.
+
+The second line of the input consists of the array of elements separated by space.
+
+The third line of the input consists of the sum.
+Output format :
+
+The output prints whether the array has a pair of elements with the given sum.
+Sample test cases :
+Input 1 :
+
+6
+1 4 45 6 10 -8
+16
+
+Output 1 :
+
+Array has two elements with given sum 16
+
+Input 2 :
+
+6
+1 4 45 6 10 -8
+60
+
+Output 2 :
+
+Array doesn't have two elements with given sum 60
+
+
+
+// 4 classes and objects
+Write a Java program that contains the classes Doctor and Patient. Write the class Doctor in the class patient. Class Doctor contains a constructor that sets the name, address, and passport number. Display the person's name, address, and ward number in the class Patient.
+
+
+Input format :
+
+The first line of input consists of a name of a patient
+
+The second line of input consists of an address of a patient
+
+The third line of input consists of a ward number
+Output format :
+
+The output consists of a patient's details
+
+
+Refer to the sample input and output for format specifications.
+Sample test cases :
+Input 1 :
+
+Raju
+Chennai
+34
+
+Output 1 :
+
+Name : Raju
+Address : Chennai
+Ward Number : 34
+
+Input 2 :
+
+Manju
+Coimbatore
+37
+
+Output 2 :
+
+Name : Manju
+Address : Coimbatore
+Ward Number : 37
+
+import java.util.*;
+class Doctor
+{
+    String Name;
+    String Address;
+    String Number;
+    public Doctor(String Name,String Address,String Number)
+    {
+        this.Name = Name;
+        this.Address = Address;
+        this.Number = Number;
+    }
+}
+class Patient
+{
+    Doctor passport;
+    Patient(Doctor passport){
+        this .passport = passport;
+    }
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        String name = sc.nextLine();
+        String Address = sc.nextLine();
+        String Number = sc.next();
+        Doctor p = new Doctor(name,Address,Number);
+        Patient patient = new Patient(p);
+        System.out.println("Name : " + patient.passport.Name);
+        System.out.println("Address : " + patient.passport.Address);
+        System.out.println("Ward Number : " + patient.passport.Number);
+    }
+}
+
+
+import java.util.*;
+
+class Doctor{
+    private String name;
+    private String add;
+    private String ward;
+    
+    public Doctor(String name, String add, String ward){
+        this.name = name;
+        this.add = add;
+        this.ward = ward;
+    }
+    
+    public String getN(){
+        return name;
+    }
+    public String getA(){
+        return add;
+    }
+    public String getW(){
+        return ward;
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String name = sc.nextLine();
+        String add = sc.nextLine();
+        String ward = sc.nextLine();
+        
+        Doctor dr = new Doctor(name, add, ward);
+        
+        System.out.println("Name : "+name);
+        System.out.println("Address : "+add);
+        System.out.println("Ward Number : "+ward);
+    }
+}
+
+
+
+
+6
+Ram is a supermarket employee. He works in the stock maintenance department. He wants to determine how frequently these items are repeated. Assist developers in writing code to address the problem.
+Input format :
+
+The first line of the input consists of the number of product
+
+The second line of the input consists of the product name
+
+The third line of the input consists of the searched element.
+Output format :
+
+The output displays the frequency of the searched element.
+
+
+Refer to the sample input and output for format specifications.
+Sample test cases :
+Input 1 :
+
+7
+milk
+fruit bread
+jam
+milk
+eggs
+Frozen Foods
+Cheese
+milk
+
+Output 1 :
+
+2
+
+import java.io.*;
+import java.util.*;
+class Main {
+public static void main(String [] args) {
+	int i,n;
+	Scanner sc = new Scanner(System.in);
+	n = Integer.parseInt(sc.nextLine());
+	ArrayList<String> names = new ArrayList<String>(n);
+	for(i=0;i<n;i++) {
+		names.add(sc.nextLine());
+	}
+	String search = sc.nextLine();
+	System.out.println(Collections.frequency(names, search));
+}
+}
+
+
+The input a positive integer N (N > 0), input N strings, and sort the strings in place in the order of increasing length. Print the sorted strings using ArrayList as an implementation of the List interface for storing the individual strings.
+Input format :
+
+The input consists of the number of elements
+
+The input consists of the each string on a separate line
+Output format :
+
+The output displays the list of strings sorted by their length
+
+
+Refer to the sample input and output for format specifications.
+Sample test cases :
+Input 1 :
+
+3
+aa
+b
+ccc
+
+Output 1 :
+
+[b, aa, ccc]
+
+Input 2 :
+
+3
+111
+22
+3333
+
+Output 2 :
+
+[22, 111, 3333]
+
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.nextLine();
+        ArrayList<String> stringsList = new ArrayList<>();
+        
+        for(int i=0; i<n;i++){
+            String str = sc.nextLine().trim();
+            stringsList.add(str);
+        }
+        
+        Collections.sort(stringsList, Comparator.comparingInt(String :: length));
+        System.out.println(stringsList);
+    }
+}
+
+
+
+The input a positive integer N (N > 0), input N strings, and sort the strings in place in the order of increasing length. Print the sorted strings using ArrayList as an implementation of the List interface for storing the individual strings.
+Input format :
+
+The input consists of the number of elements
+
+The input consists of the each string on a separate line
+Output format :
+
+The output displays the list of strings sorted by their length
+
+
+Refer to the sample input and output for format specifications.
+Sample test cases :
+Input 1 :
+
+3
+aa
+b
+ccc
+
+Output 1 :
+
+[b, aa, ccc]
+
+Input 2 :
+
+3
+111
+22
+3333
+
+Output 2 :
+
+[22, 111, 3333]
+
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Q01Simple_Sort
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner input = new Scanner(System. in);
+		// Input number of elements
+		int number_of_elements = input. nextInt();
+		input. nextLine();
+		if (number_of_elements <= 0) return;
+		List<String> list = new ArrayList<>(); 
+		for (int ctr = 0; ctr < number_of_elements; ctr++) {
+			// Input next string
+			String str = input. nextLine();
+			list.add(str);
+		}
+		Collections.sort(list, new Comparator<String>() {
+			public int compare(String o1, String o2) {
+			return o1.length() - o2.length();
+		}});
+		System.out.println(list);	
+	}
+}
+
+
+
+
+
+The input 2 lines of text with multiple words separated by spaces. Using HashSet as an implementation of Set, print the set of words found in both lines.
+Input format :
+
+The first line of the input consists of a string
+
+The second line of the input consists of a string
+Output format :
+
+The display of the set of common words
+
+
+Refer to the sample input and output for format specifications.
+Sample test cases :
+Input 1 :
+
+one two three
+two four
+
+Output 1 :
+[two]
+
+import java.util.*;
+public class Main{
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		sc.nextLine();
+		ArrayList<String> stringsList = new ArrayList<>();
+		
+		for(int i=0; i<n;i++){
+			String str = sc.nextLine().trim();
+			stringsList.add(str);
+		}
+		
+		Collections.sort(stringsList, Comparator.comparingInt(String :: length));
+		System.out.println(stringsList);
+	}
+}
+
+
+Even halls cost
+
+
+Create a list of the cost that has to be paid for halls and print only the even values using lambda expressions.
+Input format :
+
+The first line of the input is the value of n.
+
+The second line of the input consists of the cost separated by a space.
+Output format :
+
+The output prints the even values separated by a space.
+Sample test cases :
+Input 1 :
+
+7
+423 466 436 306 495 281 34
+
+Output 1 :
+
+466 436 306 34 
+
+import java.util.*;
+import java.util.stream.Collectors;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n= sc.nextInt();
+        sc.nextLine();
+        
+        List<Integer> costs = Arrays.stream(sc.nextLine().split(" ")).map(Integer::parseInt).collect(Collectors.toList());
+        List<Integer> evenCosts = costs.stream().filter(cost -> cost %2 ==0).collect(Collectors.toList());
+        
+        evenCosts.forEach(cost -> System.out.print(cost + " "));
+    }
+}
+
+
+Another typical exception that you have probably already encountered is when using a BufferedReader to read input. You must parse the string into different data types, such as integer and double. A NumberFormatException is thrown, for instance, if you attempt to parse a string ("abc") into an integer. In order to handle this NumberFormat error, lets try This issue might arise in our program when getting properties for classes like ItemType. then attempt to control it in this program.
+
+
+Create a class ItemType with the following attribute: "Add appropriate getter and setter, default, and parameterized constructor." public ItemType(String name, Double deposit, Double costPerDay). Override toString() and print the details.
+
+
+Input format :
+
+The first line of the input consists of the name.
+
+The second line of the input consists of the deposit.
+
+The third line of the input consists of the cost per day.
+Output format :
+
+The output prints the item details or the exception details.
+
+
+Refer to the sample input and output for format specifications.
+Sample test cases :
+Input 1 :
+
+Electronics
+1000
+100
+
+Output 1 :
+
+Electronics 1000.0 100.0
+
+Input 2 :
+
+Electronics
+one thousand
+
+Output 2 :
+
+java.lang.NumberFormatException: For input string: "one thousand"
+
+
+import java.io.*;
+import java.util.*;
+class ItemType {
+	private String name;
+	private double deposit;
+	private double costPerDay;
+	public ItemType() {
+		this.name = null;
+		this.deposit = 0;
+		this.costPerDay =0;
+	}
+	public ItemType(String name, double deposit,double costPerDay) {
+		this.name = name;
+		this.deposit = deposit;
+		this.costPerDay = costPerDay;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getDeposit() {
+		return deposit;
+	}
+	public void setDeposit(double deposit) {
+		this.deposit = deposit;
+	}
+	public double getCostPerDay() {
+		return costPerDay;
+	}
+	public void setCostPerDay(double costPerDay) {
+		this.costPerDay = costPerDay;
+	}
+	public String toString() {
+		return name+" "+deposit+" "+costPerDay;
+	}
+}
+class Main {
+	public static void main(String [] args) {
+		Scanner sc = new Scanner(System.in);
+		ItemType i = new ItemType();
+		try {
+			i.setName(sc.nextLine());
+			i.setDeposit(Double.parseDouble(sc.nextLine()));
+			i.setCostPerDay(Double.parseDouble(sc.nextLine()));
+			System.out.println(i);
+		}
+		catch(NumberFormatException n) {
+			System.out.println(n);
+		}
+	}
+}
+
+
+// Multithreading
+Profit or Loss
+
+
+Now we are going to create a console application that can estimate whether the booking is a profit or loss, thereby enabling hall owners to reduce or increase expenses depending on the status. Hence, if several Booking details are given, compute whether the bookings are profitable or not. Use threads to compute for each booking, and finally display the profit or loss status.
+
+
+Create a class HallBooking that implements the Runnable interface with the following private attributes.
+
+Include appropriate getters and setters.
+
+
+Create a default constructor and a parameterized constructor with arguments in order HallBooking (String hallName, Double cost, Integer hallCapacity,Integer seatsBooked).
+
+
+Override the run() method, which displays the status (i.e., Profit or Loss. If SeatsBooked*100 > cost then it is a profit else loss .
+
+Create a driver class. Main. The status for each hall is calculated by separate threads. The threads print the status of the events. 
+
+
+Ignore output line order
+Input format :
+
+The first line of input corresponds to the number of events n.
+
+The next input is the hall details.
+Output format :
+
+The output consists of the status of the events. (Profit or Loss).
+
+
+Refer to a sample input and output for formatting specifications.
+Sample test cases :
+Input 1 :
+
+4
+Le Meridian
+12000
+400
+250
+MS mahal
+500000
+1000
+400
+Ramans
+10000
+600
+300
+Rizzodous
+30000
+1200
+1000
+
+Output 1 :
+
+Profit
+Loss
+Profit
+Profit
+
+
+import java.io.*;
+import java.util.*;
+class HallBooking implements Runnable {
+	public HallBooking(String hallName, double cost, int hallCapacity, int seatsBooked) {
+
+		HallName = hallName;
+		this.cost = cost;
+		HallCapacity = hallCapacity;
+		SeatsBooked = seatsBooked;
+	}
+	public HallBooking() {
+		this.HallName = null;
+		this.cost = 0;
+		this.HallCapacity = 0;
+		this.SeatsBooked = 0;
+	}
+	private String HallName;
+	private double cost;
+	private int HallCapacity;
+	private int SeatsBooked;
+	public String getHallName() {
+		return HallName;
+	}
+	public void setHallName(String hallName) {
+		HallName = hallName;
+	}
+	public double getCost() {
+		return cost;
+	}
+	public void setCost(double cost) {
+		this.cost = cost;
+	}
+	public int getHallCapacity() {
+		return HallCapacity;
+	}
+	public void setHallCapacity(int hallCapacity) {
+		HallCapacity = hallCapacity;
+	}
+	public int getSeatsBooked() {
+		return SeatsBooked;
+	}
+	public void setSeatsBooked(int seatsBooked) {
+		SeatsBooked = seatsBooked;
+	}
+	@Override
+	public void run() {
+		int res = this.SeatsBooked* 100;
+		if(res > cost) {
+			System.out.println("Profit");
+		}
+		else
+			System.out.println("Loss");
+		
+	}
+}
+class Main {
+public static void main(String [] args) {
+	int i,n;
+	Scanner sc = new Scanner(System.in);
+	n = Integer.parseInt(sc.nextLine());
+	for(i=0;i<n;i++) {
+		HallBooking h = new HallBooking();
+		h.setHallName(sc.nextLine());
+		h.setCost(Double.parseDouble(sc.nextLine()));
+		h.setHallCapacity(Integer.parseInt(sc.nextLine()));
+		h.setSeatsBooked(Integer.parseInt(sc.nextLine()));
+		Thread t = new Thread(h);
+		t.start();
+	}
+}
+}
+
+
+Write a program for matrix multiplication in java using threads.
+Input format :
+
+The first line consists of the row and column value of Matrix 1 separated by a single space
+
+The second line consists of the row and column value of Matrix 2 separated by a single space
+
+The next input Matrix 1 elements of the matrix.
+
+The next input Matrix 2 elements of the matrix.
+Output format :
+
+Display the matrix after multiplication.
+
+
+Refer to the sample input and output for format specifications.
+Code constraints :
+
+Integers only.
+Sample test cases :
+Input 1 :
+
+2 2
+2 2
+1 2
+3 4
+5 6
+7 8
+
+Output 1 :
+
+19 22 
+43 50 
+
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int m1=sc.nextInt();
+        int n1 = sc.nextInt();
+        
+        int m2 = sc.nextInt();
+        int n2 = sc.nextInt();
+        
+        if(n1 != m2){
+            System.out.println();
+            return;
+        }
+        
+        int[][] mat1= new int[m1][n1];
+        int[][] mat2 = new int[m2][n2];
+        for(int i=0;i<m1;i++){
+            for(int j=0;j<n1;j++){
+                mat1[i][j]=sc.nextInt();
+            }
+        }
+        
+        for(int i=0;i<m2;i++){
+            for(int j=0; j<n2;j++){
+                mat2[i][j]=sc.nextInt();
+            }
+        }
+        
+        int[][] res = new int[m1][n2];
+        
+        Thread[] threads = new Thread[m1];
+        for(int i=0;i<m1;i++){
+            threads[i]= new Thread(new row(mat1, mat2, res, i));
+            threads[i].start();
+        }
+        for(Thread thread : threads){
+            try{
+                thread.join();
+            }catch(InterruptedException e){
+                e.printStackTrace();
+            }
+        }
+        for(int i =0; i<m1;i++){
+            for(int j=0;j<n2;j++){
+                System.out.print(res[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+class row implements Runnable{
+    private int[][] mat1;
+    private int[][] mat2;
+    private int[][] res;
+    private int row;
+    
+    public row(int[][] mat1, int[][] mat2, int[][] res, int row){
+        this.mat1 = mat1;
+        this.mat2 = mat2;
+        this.res = res;
+        this.row = row;
+    }
+    
+    public void run(){
+        int n1 = mat1[0].length;
+        int n2 = mat2[0].length;
+        
+        for(int j =0; j<n2;j++){
+            for(int k=0;k<n1;k++){
+                res[row][j] +=mat1[row][k] *mat2[k][j];
+            }
+        }
+    }
+}
+
+
+
+
+Maruti Suzuki gives a special bonus to its employees with 100% attendance in a year, along with a certificate of appreciation. Assume there are N employees. Get the attendance percentage of N employees and store them in an array.
+
+
+Create two threads so that thread1 determines the total count of employees eligible for a certificate in the first half of the array and thread2 in the second half of the array.
+
+
+The main( ) has to wait till both threads complete their tasks and arrive at a final count indicating the total number of employees eligible for the certificate of appreciation.
+Input format :
+
+The first line of the input consists of the number of employees.
+
+The second line has the average attendance percentage of employees.
+Output format :
+
+The output prints the winners count.
+
+
+Refer to the sample input and output for format specifications.
+Sample test cases :
+Input 1 :
+
+10
+89 100 75 98 90 100 100 98 83 99
+
+Output 1 :
+
+Winners : 3
+
+
+import java.util.Scanner;
+import java.util.Vector;
+
+class Attendance{
+    static int winners = 0;
+    static int i=0;
+    static Vector<Integer> arr = new Vector<>();
+
+    static synchronized void counting(int n){
+        //System.out.println(Thread.currentThread().getName() + " is counting");
+        for( ; i < n; i++){
+            if(arr.get(i) == 100) {
+            	//System.out.println(i);
+            	winners++;
+            }
+        }
+    }
+}
+
+class count extends Thread{
+    int n;
+
+    count(int n){
+        this.n = n;
+    }
+    public void run(){
+        Attendance.counting(n);
+    }
+}
+
+class Honors {
+    public static void main(String[] args) {
+
+        //int max = 100;
+       // int min = 75;
+        Scanner myObj =new Scanner(System.in);
+        int m = Integer.parseInt(myObj.nextLine());
+        int tc1=m/2;
+       // int tc2=m-tc1;
+
+        for(int i = 0; i < m; i++){
+            int n = myObj.nextInt();
+            Attendance.arr.add(n);
+        }
+
+        Thread t1 = new count(tc1);
+        Thread t2 = new count(m);
+        t1.start();
+        t2.start();
+
+        try{
+            t1.join();
+            t2.join();
+        }catch(InterruptedException e) {
+            System.out.println(e);
+        }
+
+       // System.out.println(Attendance.arr);
+        System.out.println("Winners : " + Attendance.winners);
+
+    }
+}
+
+
+
+
+The Accounting department of the fair committee wants a console application that can estimate the total revenue generated by rent from an exhibition. So write a program that accepts the stall details of an exhibition that includes the stallArea which is used for computing the stallCost. Using threads, calculate the stallCost of each stall, and in the main method, print the consolidated data.
+
+ 
+
+Create a class Stall which implements Runnable interface with the following private attributes,
+
+Create a default constructor and a parameterized constructor with arguments in the order Stall(String stallName, String details, Double stallArea, String owner). Create appropriate getters and setters.
+
+
+Override the following methods in the Stall class,
+
+﻿
+
+Get the number of stalls and stall details and calculate the total revenue of all the stalls. Calculate the stall cost for each stall, each cost will be calculated by separate thread.
+
+ 
+
+Create a driver class Main to test the above requirements.
+
+Ignore Output Line Order
+Input format :
+
+The first line of the input consist of the number of inputs to be given
+
+The next input is the stall details
+Output format :
+
+Output prints the stall cost of each stall
+
+
+Refer to the sample input and output for format specifications.
+Sample test cases :
+Input 1 :
+
+3
+Book stall
+Stall for books
+25
+John
+Food stall
+Stall for foods
+60
+Peter
+Snack stall
+Stall for snack
+30
+Adam
+
+Output 1 :
+
+3750.0
+4500.0
+9000.0
+
+
+import java.io.*;
+import java.util.*;
+class Stall implements Runnable  {
+	private String stallName;
+	private String details;
+	private double stallArea;
+	private String owner;
+	private double stallCost;
+	
+	public Stall(String stallName, String details, double stallArea, String owner) {
+		this.stallName = stallName;
+		this.details = details;
+		this.stallArea = stallArea;
+		this.owner = owner;
+	}
+	public Stall() {
+		this.stallName = null;
+		this.details = null;
+		this.stallArea = 0;
+		this.owner = null;
+	}
+	@Override
+	public void run() {
+		this.stallCost = this.stallArea * 150.0;
+		System.out.println(this.stallCost);
+		
+	}
+
+	public String getStallName() {
+		return stallName;
+	}
+
+	public void setStallName(String stallName) {
+		this.stallName = stallName;
+	}
+
+	public String getDetails() {
+		return details;
+	}
+
+	public void setDetails(String details) {
+		this.details = details;
+	}
+
+	public double getStallArea() {
+		return stallArea;
+	}
+
+	public void setStallArea(double stallArea) {
+		this.stallArea = stallArea;
+	}
+
+	public String getOwner() {
+		return owner;
+	}
+
+	public void setOwner(String owner) {
+		this.owner = owner;
+	}
+
+	public double getStallCost() {
+		return stallCost;
+	}
+
+	public void setStallCost(double stallCost) {
+		this.stallCost = stallCost;
+	}
+	
+}
+class Main {
+public static void main(String [] args) {
+	int n,i;
+	Scanner sc = new Scanner(System.in);
+	n = Integer.parseInt(sc.nextLine());
+	for(i=0;i<n;i++) {
+		Stall st = new Stall();
+		st.setStallName(sc.nextLine());
+		st.setDetails(sc.nextLine());
+		st.setStallArea(Double.parseDouble(sc.nextLine()));
+		st.setOwner(sc.nextLine());
+		Thread s = new Thread(st);
+		s.start();
+		
+	}
+}
+}
+
+
+
+
+Printing even and odd threads
+
+Write a program that starts two threads marked “even” and “odd”. The threads cooperate to print the numbers from 1 to 20 in sequence, with the “even” thread printing only even numbers and the odd the thread printing only odd numbers.
+
+Ignore the output line order.
+
+
+Question Instructions:
+
+    The solution code should have its class named as EvenAndOdd
+    The solution logic should be written in EvenAndOdd class
+    The output line order can be ignored.
+
+Input format :
+
+No console input.
+Output format :
+
+The numbers from 1 to 20 are printed in sequence alternatively by the odd and even threads, with the odd thread printing only odd numbers and the even thread printing only even numbers.
+
+
+Refer to the sample output for format specifications.
+Sample test cases :
+Input 1 :
+
+Output 1 :
+
+Thread Odd: 1
+Thread even: 2
+Thread Odd: 3
+Thread even: 4
+Thread Odd: 5
+Thread even: 6
+Thread Odd: 7
+Thread even: 8
+Thread Odd: 9
+Thread even: 10
+Thread Odd: 11
+Thread even: 12
+Thread Odd: 13
+Thread even: 14
+Thread Odd: 15
+Thread even: 16
+Thread Odd: 17
+Thread even: 18
+Thread Odd: 19
+Thread even: 20
+
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.util.concurrent.*;
+
+class Q01Complex_Thread
+{
+	private static final Object objectToSync = new Object();
+	static CyclicBarrier barrier = new CyclicBarrier(2);
+	public static class MyRunnable implements Runnable {
+		private boolean printEven;
+		public MyRunnable(boolean b) {
+			this.printEven = b;
+		}
+		public void run() {
+			try {
+				for (int i = 1; i < 21; i++) {
+					if (printEven && i % 2 == 0) 
+						System.out.println("Thread even: " + i);
+					else if (!printEven && i % 2 == 1) 
+						System.out.println("Thread Odd: " + i);
+					barrier.await();
+				}
+			} catch (BrokenBarrierException e) {
+			} catch (InterruptedException e) {
+			}
+		}
+	}
+	public static void main (String[] args) throws java.lang.Exception {
+	   Thread tEven = new Thread(new MyRunnable(true));
+	   tEven.start();
+	   Thread tOdd = new Thread(new MyRunnable(false));
+	   tOdd.start();
+	}
+}
+
