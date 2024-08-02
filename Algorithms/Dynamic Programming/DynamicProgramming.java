@@ -13,7 +13,7 @@ Problems like:
 
 Whenever "Try all possible ways" --> Recursion
 
-To write recurrance rel of a problem:
+To write recurrance reln of a problem:
     1. Try to represent the problem in terms of index.
     2. Do all possible stuffs on that index according to the problem statement.
     3. If ques asks:
@@ -22,9 +22,10 @@ To write recurrance rel of a problem:
 
        Think about edge cases.
 
-Filling in tabulation is opposite of that of memoization.
+Diminsion of DP will be equal to no. of changing parameters in the recursion.
+Filling in tabulation is opposite of that of Memoization.
+i.e changing parameters in tabulation will be iterated in opposite manner as that of recursion
 */
-
 
 
 /* 
@@ -56,8 +57,6 @@ public class DynamicProgramming {
 2. Fibonacci Sequence
 0 1 1 2 3 5 8 13 21 34
 
-
-import java.util.Arrays;
 
 public class DynamicProgramming {
 
