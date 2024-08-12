@@ -6,6 +6,7 @@ Hashing -> Converting an arbitrary sized key to a smaller sized key using some h
 Hash function:
 - for same input, always gives same output
 - a perfect hash function always produces unique output for a unique input, but that's not the case in non-perfect hash function(where collision could occur).
+
 Generally used Hash functions:
 1. Division method - H(k) = k mod M
 2. Mid-square method - H(k) = H(k*k)
