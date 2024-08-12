@@ -63,11 +63,13 @@ The elements are stored based on the priority order which is ascending by defaul
 The required no. Min/Max is present in the 1st index of the queue, so when we remove/poll an element minimum is removed, 
 but remaining elements when printed or traversed appear randomly
 */
+
+/*
 import java.util.*;
 
 public class Priority_Queue {
     public static void main(String[] args) {
-        System.out.println("Priority Queue (default: Min)");
+        System.out.println("Priority Queue (default: Min Heap)");
         PriorityQueue<Integer> pq = new PriorityQueue<>();
         pq.add(278);
         pq.offer(23);
@@ -80,8 +82,9 @@ public class Priority_Queue {
         System.out.println(pq); // doesn't give correct order - gives a random order
         // Order is maintained while removing/polling elements from the priority queue
 
-        System.out.println(pq.remove()); // removes in ascending order
+        System.out.println(pq.poll()); // removes in ascending order
         System.out.println(pq.remove());
+        System.out.println(pq.remove(77));  // removes the specific number - returns true if present
         System.out.println(pq.poll());
 
         System.out.println(pq);
@@ -93,7 +96,7 @@ public class Priority_Queue {
         System.out.println();
 
         // For descending order:
-        System.out.println("Priority queue in descending order ( Max )");
+        System.out.println("Priority queue in descending order ( Max Heap )");
         PriorityQueue<Integer> pq_rev = new PriorityQueue<>(Comparator.reverseOrder());
         pq_rev.offer(23);
         pq_rev.offer(-45);
@@ -109,5 +112,95 @@ public class Priority_Queue {
         
 
         System.out.println("Is the queue empty?: " + pq_rev.isEmpty());
+    }
+}
+*/
+
+// Custom Comparator
+/* 
+1. Get students based on decreasing marks
+2. Get students based on increasing name length
+3. Get students based on decreasing alphabetical order
+*/
+import java.util.*;
+
+public class Priority_Queue {
+
+    static class Student {
+        String name;
+        int marks;
+
+        Student(String name, int marks) {
+            this.name = name;
+            this.marks = marks;
+        }
+
+        @Override
+        public String toString() {
+            return name + " " + marks;
+        }
+    }
+
+    public static void main(String[] args) {
+        // 1. Getting students based on decreasing marks
+        // PriorityQueue<Student> pq1 = new PriorityQueue<>(new Comparator<Student>(){
+        //     public int compare(Student s1, Student s2) {
+        //         return s2.marks - s1.marks;
+        //     }
+        // });
+
+        // Shorter way by using lambda function:
+        PriorityQueue<Student> pq1 = new PriorityQueue<>((s1, s2) -> s2.marks - s1.marks);
+        pq1.offer(new Student("Libin", 94));
+        pq1.offer(new Student("Lavesh", 74));
+        pq1.offer(new Student("Aruneet", 96));
+        pq1.offer(new Student("Ravi", 82));
+        pq1.offer(new Student("Jeevan", 90));
+        pq1.offer(new Student("Anandu", 68));
+
+        System.out.println("Students in Descending order of Marks: ");
+        while (!pq1.isEmpty()) {
+            System.out.println(pq1.poll());
+        }
+        System.out.println(pq1);
+
+        // 2. Getting students based on increasing order name length
+        PriorityQueue<Student> pq2 = new PriorityQueue<>(new Comparator<Student>(){
+            public int compare(Student s1, Student s2){
+                return s1.name.length() - s2.name.length();
+            }
+        });
+
+        pq2.offer(new Student("Libin", 94));
+        pq2.offer(new Student("Lavesh", 74));
+        pq2.offer(new Student("Aruneet", 96));
+        pq2.offer(new Student("Ravi", 82));
+        pq2.offer(new Student("Jeevan", 90));
+        pq2.offer(new Student("Anandu", 68));
+
+        System.out.println("\nStudents in Ascending order of Length of Name: ");
+        while (!pq2.isEmpty()) {
+            System.out.println(pq2.poll());
+        }
+        System.out.println(pq2);
+
+        // 3. Getting students based on decreasing alphabetical order of name
+        // Here i'm also demonstrating lambda function:
+
+        PriorityQueue<Student> pq3 = new PriorityQueue<>((s1, s2) -> s2.name.compareTo(s1.name));
+
+        pq3.offer(new Student("Libin", 94));
+        pq3.offer(new Student("Lavesh", 74));
+        pq3.offer(new Student("Aruneet", 96));
+        pq3.offer(new Student("Ravi", 82));
+        pq3.offer(new Student("Jeevan", 90));
+        pq3.offer(new Student("Anandu", 68));
+
+        System.out.println("\nStudents in decreasing Alphabetical order of Name: ");
+        while (!pq3.isEmpty()) {
+            System.out.println(pq3.poll());
+        }
+        System.out.println(pq3);
+
     }
 }

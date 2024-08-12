@@ -30,7 +30,7 @@ public class Comparators {
         ls.add(24);
         ls.add(8);
 
-        Collections.sort(ls, com); // we are gigving our custom comparator 
+        Collections.sort(ls, com); // we are giving our own custom comparator here
         System.out.println(ls);
 
     }
