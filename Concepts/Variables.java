@@ -20,7 +20,7 @@ public class Variables {
         System.out.println(var1.b);
         System.out.println(var1.c);
         
-        // every object will have new copy of instance variable.
+        // every obkject will have new copy of instance variable.
         Variables var2 = new Variables();
         System.out.println(var2.b+3);
         System.out.println(var2.c);

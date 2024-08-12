@@ -139,18 +139,16 @@ public class practise {
 
 // import java.util.*;
 
-import java.util.Arrays;
-
 class practise {
-    // private String type = null;
+    private String type = null;
 
-    // public Car() {
-    //     this.type = "Maruti";
-    // }
+    public Car() {
+        this.type = "Maruti";
+    }
 
-    // public Car(String type) {
-    //     this.type = type;
-    // }
+    public Car(String type) {
+        this.type = type;
+    }
 
     public static void main(String arg[]) {
         // Car car = new Car();
@@ -163,10 +161,14 @@ class practise {
         // String s = String.join(" ", st);
         // System.out.println(s);
 
+
         // String a = "-034";
         // int b = Integer.parseInt(a);
         // System.out.println(b+1);
         int a = 2001101821;
-        System.out.println(a + 999993443);
+        
+
+
+
     }
 }

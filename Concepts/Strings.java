@@ -52,7 +52,7 @@ toUpperCase()	Converts a string to upper case letters	                          
 trim()	        Removes whitespace from both ends of a string	                        String
 valueOf()   	Returns the string representation of the specified value            	String
 
-IN all these methods, the original string remains the same as Strings are immutable
+IN all these methods, the original string the same as Strings are immutable
 */
 
 /* 
@@ -75,44 +75,30 @@ int lastIndexOf(String str)               It will return the index where the spe
 Void trimToSize()                         It will attempt to reduce the size of the StringBuilder.
 */
 
-import java.util.Arrays;
-
+/* 
 public class Strings {
     public static void main(String[] args) {
         String s1 = "Libin Alex";
-        System.out.println("Testing String Methods:");
-        System.out.println("Index of: " + s1.indexOf("bin"));
-        System.out.println("Substring: " + s1.substring(2, 5));
-        System.out.println("Substring: " + s1.substring(4));
-        System.out.println("Contains: " + s1.contains("bin"));
-        System.out.println("Contains: " + s1.contains("hi"));
-        System.out.println("To upper case: " + s1.toUpperCase());
-
         String s2= "";
-        System.out.println("Is stirng empty?: " + s2.isEmpty());
-        
-        System.out.println("\nSplitting, trimming and joining a String: ");
-        String s4 = " Hi, Hello World!   I am  Libin Alex. ";
-        String[] st = s4.trim().split("\\s+");
-        System.out.println(Arrays.toString(st));
+        System.out.println(s1.indexOf("bin"));
+        System.out.println(s1.substring(2, 5));
+        System.out.println(s1.substring(4));
+        System.out.println(s1.contains("bin"));
+        System.out.println(s1.contains("hi"));
+        System.out.println(s1.toUpperCase());
+        System.out.println(s2.isEmpty());
 
-        String s = String.join(" $", st);
-        System.out.println(s);
-
-
-
-        System.out.println("\n\nString Builder:");
         StringBuilder s3 = new StringBuilder("Hello Libin");
         s3.append(", Hi!");
         System.out.println(s3);
-        System.out.println("Insert: " + s3.insert(11, " Alex"));
-        System.out.println("Delete: " + s3.delete(16, 25));
-        System.out.println("Replace: " + s3.replace(16, 17, " Ji!"));
-        System.out.println("Reverse: " + s3.reverse());
+        System.out.println(s3.insert(11, " Alex"));
+        System.out.println(s3.delete(16, 25));
+        System.out.println(s3.replace(16, 17, " Ji!"));
+        System.out.println(s3.reverse());
         System.out.println(s3);
     }
 }
-
+*/
 
 /* 
 1. Check if two strings are anagrams of each other
@@ -153,28 +139,6 @@ Logic: First reverse each word, then reverse entire sentence
 import java.util.Arrays;
 
 public class Strings {
-
-    // If string has leading or trailing 0s
-    public String reverseWords(String s) {
-        StringBuilder str = new StringBuilder();
-
-        int j=s.length();
-        for(int i=s.length() - 1; i>=0; i--){
-            if(s.charAt(i) == ' '){
-                j = i;
-            }
-            
-            else if(i==0 || s.charAt(i-1) == ' '){
-                if(str.length() !=0){
-                    str.append(" ");
-                }
-                str.append(s.substring(i, j));
-                
-            }
-                
-        }
-        return str.toString();
-    }
 
     static char[] reverseCharacters(char[] ch, int i, int j) {
         while (i < j) {
@@ -224,20 +188,6 @@ Pattern: bda
 
 
 public class Strings {
-
-    public int indexOf(String s, String p) {
-        int n = s.length();
-        int m = p.length();
-        for(int i=0; ;i++){
-            for(int j=0; ;j++){
-                if(j == m) return i;
-                if((i+j) == n) return -1;
-                if(s.charAt(i+j) != p.charAt(j))
-                    break;
-            }
-        }
-    }
-
     static void stringMatching(String s, String p) {
         int n = s.length();
         int m = p.length();

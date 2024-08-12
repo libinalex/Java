@@ -9,8 +9,11 @@
 import java.util.*;
 class Main
 {
+
+
 	static void moveSpaceInFront(char str[])
 	{
+
 		int n = str.length-1;
 		for (int i = n; i>= 0; i--)
 			if (str[i] != '-')

@@ -37,11 +37,10 @@ public class Comparators {
 }
 */
 
-// Sorting Strings based on some condition: 
+// Sorting Strings based on length of the string: 
 
 public class Comparators {
     public static void main(String[] args) {
-        // Custom comparator to compare based on size of string
         Comparator<String> comp = new Comparator<String>() {        // anonymous class (can be declared within any class)
             public int compare(String s1, String s2) {              // override the compare method of Comparator 
                 if(s1.length() < s2.length())
@@ -51,21 +50,13 @@ public class Comparators {
         }; // ends with a semi-colon
         
         // Note that we can give any number of custom comparator anonymous classes, unlike comparable interface
-        // Custom comparator to compare based on last character
         Comparator<String> comp_last = new Comparator<String>() {        
             public int compare(String s1, String s2) {            
                 if(s1.charAt(s1.length()-1) < s2.charAt(s2.length()-1))  
                     return -1;
                 return 1;
             }
-        };
-        
-        // Comparator with lambda:
-        // Custom comparator to compare in descending alphabetical order
-        Comparator<String> descendingAlphabetic = (s1, s2) -> s2.compareTo(s1);
-
-        // Custom comparator to compare in descending order of length
-        Comparator<String> descendingLength = (s1, s2) -> s2.length() - s1.length();
+        }; 
 
 
         String arr[] = { "Libin", "Lavesh", "Aruneet", "Ravi" };
@@ -77,20 +68,10 @@ public class Comparators {
         System.out.println("\nArray after sorting according to length of string: ");
         System.out.println(Arrays.toString(arr));
 
-        Arrays.sort(arr, descendingLength);   
-
-        System.out.println("\nArray after sorting according to descending order of length of string: ");
-        System.out.println(Arrays.toString(arr));
-
-        Arrays.sort(arr, comp_last);    
+        Arrays.sort(arr, comp_last);    // passing our custom comparator as the 2nd argument.
 
         System.out.println("\nArray after sorting according to last character of string: ");
         System.out.println(Arrays.toString(arr));
-        
-        Arrays.sort(arr, descendingAlphabetic);
-        System.out.println("\nArray after sorting according in descending order Alphabetically: ");
-        System.out.println(Arrays.toString(arr));
-
     }
 }
 

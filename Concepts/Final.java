@@ -31,7 +31,7 @@ final class Example extends Final {
     }
 }
 
-class Ex2 extends Example {         // error - cannot inherit from final Example class
+class Ex2 extends Example {         // error - cannot inherit from final Example
     void output() {
         System.out.println("Inheriting a final class");
     }
