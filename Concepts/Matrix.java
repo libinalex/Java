@@ -162,24 +162,85 @@ public class Matrix {
 */
 
 public class Matrix {
-    static void printSpiralMatrix(int[][] matrix) {
+    
+        static void printSpiralMatrix(int[][] matrix) {
         int m = matrix.length;
         int n = matrix[0].length;
-        int i = 0, j = 0;
-        int ind = m * n;
-        int count = 0;
-        while (count < ind) {
-            
+        int top = 0, bottom = m - 1;
+        int left = 0, right = n - 1;
+
+        // Loop until all elements are not traversed.
+        while (top <= bottom && left <= right) {
+
+            // For moving left to right
+            for (int i = left; i <= right; i++)
+                System.out.print(matrix[top][i] + " ");
+
+            top++;
+
+            // For moving top to bottom.
+            for (int i = top; i <= bottom; i++)
+                System.out.print(matrix[i][right] + " ");
+
+            right--;
+
+            // For moving right to left.
+            if (top <= bottom) {
+                for (int i = right; i >= left; i--)
+                    System.out.print(matrix[bottom][i] + " ");
+
+                bottom--;
+            }
+
+            // For moving bottom to top.
+            if (left <= right) {
+                for (int i = bottom; i >= top; i--)
+                    System.out.print(matrix[i][left] + " ");
+
+                left++;
+            }
         }
 
     }
+
     public static void main(String[] args) {
         int[][] matrix = {
                 { 1, 3, 5, 9 },
                 { 2, 5, 6, 12 },
                 { 5, 8, 9, 14 },
                 { 7, 10, 11, 15 } };
-        
+
+        System.out.println("Original Matrix:");
+        for (int[] i : matrix)
+            System.out.println(Arrays.toString(i));
+        System.out.println("\nSprial Matrix: ");
         printSpiralMatrix(matrix);
     }
 }
+
+/* 
+5. Interchange the diogonal elements:
+import java.util.*;
+public class Array2D {
+    public static void main(String[] args) {
+        int arr[][] = {
+                { 1, 2, 3, 4 },
+                { 5, 6, 7, 8 },
+                { 9, 1, 2, 3 },
+                { 3, 4, 5, 6 }
+        };
+        int size = 3;
+        for (int i = 0; i < 4; i++) {
+            int temp = arr[i][i];
+            arr[i][i] = arr[i][size - i];
+            arr[i][size - i] = temp;
+        }
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+*/
