@@ -159,8 +159,8 @@ public class Traversal {
         return root;
     }
 
+    // 1. In-order Traversal
     static void inOrderTraversal(Node root) {
-
         if (root == null)
             return;
 
@@ -169,6 +169,7 @@ public class Traversal {
         inOrderTraversal(root.right);
     }
 
+    // 2. Pre-order Traversal
     static void preOrderTraversal(Node root) {
 
         if (root == null)
@@ -179,6 +180,7 @@ public class Traversal {
         preOrderTraversal(root.right);
     }
 
+    // 3. Post-order Traversal
     static void postOrderTraversal(Node root) {
 
         if (root == null)

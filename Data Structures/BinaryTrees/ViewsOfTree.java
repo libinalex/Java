@@ -12,7 +12,7 @@ Example 1:
  \        / \
   7      8   9    -> level 3
 
-Horizontal View: 1 2 3 4 5 6 7 8 9
+Horizontal View: 1 2 3 4 5 6 7 8 9  (Level-Order Traversal)
 Vertical View: 4 2 7 1 5 3 8 6 9
 Right View: 1 3 6 9
 Left View: 1 2 4 7
@@ -85,7 +85,7 @@ class ViewsOfTree {
         return root;
     }
     
-    // Horizontal View (Level order traversal)
+    // Horizontal View (Level-Order Traversal)
     public static void horizontalView(Node root) {
         if (root == null)
             return;
@@ -238,37 +238,64 @@ class ViewsOfTree {
         }
     }
 
+    static void zigZagTraversal(Node root) {
+        boolean flag = true;
+        // true : Left -> Right
+        // false : Right -> Left
+        ArrayList<int[]> ans = new ArrayList<>();
+
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        while (!q.isEmpty()) {
+
+            int n = q.size();
+            int[] list = new int[n];
+
+            for (int i = 0; i < n; i++) {
+                Node node = q.poll();
+                int index = (flag) ? i : n - i - 1;
+                list[index] =  node.data;
+                if (node.left != null)
+                    q.add(node.left);
+                if (node.right != null)
+                    q.add(node.right);
+            }
+            ans.add(list);
+            flag = !flag;
+        }
+        
+        for (var i : ans) {
+            System.out.println(Arrays.toString(i));
+        }
+    }
     
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the nodes of the tree: ");
         String str = sc.nextLine();
         Node root = build(str);
+        sc.close();
 
-        System.out.print("Horizontal View: ");
+        System.out.print("\nHorizontal View: ");
         horizontalView(root);
-        System.out.println();
 
-        System.out.print("Vertical View: ");
+        System.out.print("\nVertical View: ");
         verticalView(root);
-        System.out.println();
 
-        System.out.print("Right View: ");
+        System.out.print("\nRight View: ");
         rightView(root);
-        System.out.println();
 
-        System.out.print("Left View: ");
+        System.out.print("\nLeft View: ");
         leftView(root);
-        System.out.println();
 
-        System.out.print("Top View: ");
+        System.out.print("\nTop View: ");
         topView(root);
-        System.out.println();
 
-        System.out.print("Bottom View: ");
+        System.out.print("\nBottom View: ");
         bottomView(root);
 
-        sc.close();
+        System.out.println("\nZig-Zag Traversal: ");
+        zigZagTraversal(root);
     }
 }
 

@@ -73,9 +73,11 @@ public class SortBitonicDLL {
             int m = sc.nextInt();
             head = push(head, m);
         }
+        System.out.println("Entered Bitonic List:");
         printList(head);
+        
         head = sort(head);
-        System.out.println("After sorting:");
+        System.out.println("\nAfter sorting:");
         printList(head);
     }
 }

@@ -65,11 +65,13 @@ public class SegregateEvenOdd {
             temp.next = new_node;
             temp = new_node;
         }
+        
+        System.out.println("Entered List:");
         printList(head);
 
         // Segregate even and odd nodes of Linked List
         head = segregateEvenOdd(head);
-        System.out.println("Linked List after the segregation: ");
+        System.out.println("\nLinked List after the segregation of even and odd nodes: ");
         printList(head);
 
         sc.close();

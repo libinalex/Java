@@ -1,174 +1,202 @@
-// Sorting an array
 
-/*
-import java.util.*;
-
-public class practise {
-
-    public static void main(String[] args) {
-        
-        int arr[] = { 4, 24, 9, 11, 17, 0, 44, 1 };
-
-        System.out.println("Array before sort: ");
-
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
-
-        for (int i = 0; i < arr.length - 1; i++) {
-            for (int j = i; j < arr.length; j++) {
-                if (arr[i] > arr[j]) {
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
-                }
-                // for (int k = 0; k < arr.length; k++) {
-                //     System.out.print(arr[k] + " ");
-                // }
-                // System.out.println();
-            }
-        }
-
-        System.out.println("Array after sort: ");
-
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-        
-    }
-}
-*/
-/*
-import java.util.*;
-
-class practise {
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter no.of elements in array: ");
-        int n = sc.nextInt();
-        int L[] = new int[n];
-
-        System.out.println("Enter array elements: ");
-        for (int i = 0; i < n; i++) {
-            L[i] = sc.nextInt();
-        }
-
-        for (int i = 0; i < L.length - 1; i++) {
-            for (int j = i; j < L.length; j++) {
-                if (L[i] > L[j]) {
-                    int temp = L[i];
-                    L[i] = L[j];
-                    L[j] = temp;
-                }
-            }
-        }
-
-        for (int i : L) {
-            System.out.print(i + " ");
-        }
-
-        
-        int flag = 0;
-
-        System.out.print("/nEnter key: ");
-        int key = sc.nextInt();
-        for (int i = 0; i < n; i++) {
-            if (L[i] == key) {
-                flag = 1;
-            }
-        }
-        if (flag == 0) {
-            System.out.println("empty");
-            System.exit(0);
-        } else {
-            int q = 0;
-            int t = 0;
-            int[] arr1 = new int[100];
-            int[] arr2 = new int[100];
-            for (int j = 0; j < n; j++) {
-                if (L[j] <= key) {
-                    arr1[q] = L[j];
-                    q++;
-                } else {
-                    arr2[t] = L[j];
-                    t++;
-                }
-            }
-            
-            for (int i = 0; i < q; i++) {
-                System.out.print(arr1[i] + " ");
-            }
-
-            System.out.println();
-
-            for (int i = 0; i < t; i++) {
-                System.out.print(arr2[i] + " ");
-            }
-        }
-
-    }
-}
-*/
-/*
-public class practise {
-    public static void main(String[] args) {
-        // String str = "Hello my name is Libin. is";
-        // String arr[] = str.split(" ");
-
-        // for (String stri : arr) {
-        //     System.out.println(stri);
-        System.out.println(9|10);
-        // }
-    }
-}
-*/
-
-// public class practise {
-//     static int x = 2;
-//     static int z;
-//     public static void main(String[] args) {
-//         System.out.println(x + z);
-//     }
-
-//     static {
-//         int x = 3;
-//         z = x;
-//     }
-// }
 
 // import java.util.*;
 
-class practise {
-    private String type = null;
+// class practise {
+//     static class Node {
+//         int data;
+//         Node left, right;
 
-    public Car() {
-        this.type = "Maruti";
-    }
+//         Node(int data) {
+//             this.data = data;
+//         }
+//     }
+    
+//     static Node buildTree(String s) {
+//         String[] str = s.split("\\s+");
+//         Node root = new Node(Integer.parseInt(str[0]));
+//         Queue<Node> q = new LinkedList<>();
+//         q.add(root);
+//         int i = 1;
+//         while (!q.isEmpty() && i < str.length) {
+//             Node node = q.poll();
 
-    public Car(String type) {
-        this.type = type;
-    }
+//             if (!str[i].equals("N")) {
+//                 node.left = new Node(Integer.parseInt(str[i]));
+//                 q.add(node.left);
+//             }
+//             i++;
+//             if (i >= str.length)
+//                 break;
 
-    public static void main(String arg[]) {
-        // Car car = new Car();
-        // car = new Car("Honda");
-        // System.out.print(car.type);
-        // char c = 'a';
-        // String s = "libin";
-        // String[] st = { "hi", "libin", "alex" };
-        
-        // String s = String.join(" ", st);
-        // System.out.println(s);
+//             if (!str[i].equals("N")) {
+//                 node.right = new Node(Integer.parseInt(str[i]));
+//                 q.add(node.right);
+//             }
+//             i++;
+//         }
 
+//         return root;
+//     }
+    
+//     static void preorderTraversal(Node root) {
+//         if (root == null)
+//             return;
 
-        // String a = "-034";
-        // int b = Integer.parseInt(a);
-        // System.out.println(b+1);
-        int a = 2001101821;
-        
+//         System.out.print(root.data + " ");
+//         preorderTraversal(root.left);
+//         preorderTraversal(root.right);
+//     }
 
+//     static void inordertraversal(Node root) {
+//         if (root == null)
+//             return;
+//         inordertraversal(root.left);
+//         System.out.print(root.data + " ");
+//         inordertraversal(root.right);
+//     }
 
+//     static void postorderTraversal(Node root) {
+//         if (root == null)
+//             return;
+//         postorderTraversal(root.left);
+//         postorderTraversal(root.right);
+//         System.out.print(root.data + " ");
+//     }
 
+//     static void levelOrderTraversal(Node root) {
+//         Queue<Node> q = new LinkedList<>();
+//         q.offer(root);
+//         while (!q.isEmpty()) {
+//             int n = q.size();
+//             for (int i = 0; i < n; i++) {
+//                 Node node = q.poll();
+//                 System.out.print(node.data + " ");
+//                 if (node.left != null)
+//                     q.add(node.left);
+//                 if (node.right != null)
+//                     q.add(node.right);
+//             }
+//             System.out.println();
+//         }
+//     }
+
+//     static int maxHeight(Node root) {
+//         if (root == null)
+//             return -1;
+//         return 1 + Math.max(maxHeight(root.left), maxHeight(root.right));
+//     }
+
+//     static void printLeftNodes(Node node) {
+//         if(node == null)
+//             return;
+//         if (node.left != null) {
+//             System.out.print(node.data + " ");
+//             printLeftNodes(node.left);
+//         }
+//         else if (node.right != null) {
+//             System.out.print(node.data + " ");
+//             printLeftNodes(node.right);
+//         }
+//     }
+
+//     static void printLeafNodes(Node node) {
+//         if (node == null)
+//            return;
+//         printLeafNodes(node.left);
+//         if(node.left == null && node.right == null)
+//             System.out.print(node.data + " ");
+//         printLeafNodes(node.right);
+//     }
+
+//     static void printRightNodes(Node node) {
+//         if (node == null)
+//             return;
+//         if (node.right != null) {
+//             printRightNodes(node.right);
+//             System.out.print(node.data + " ");
+//         }
+//         else if (node.left != null) {
+//             printRightNodes(node.left);
+//             System.out.print(node.data + " ");
+//         }
+
+//     }
+    
+//     static void boundaryTraversal(Node root) {
+//         System.out.print(root.data + " ");
+//         printLeftNodes(root.left);
+//         printLeafNodes(root);
+//         printRightNodes(root.right);
+//     }
+
+//     static class Pair {
+//         Node node;
+//         int dist;
+
+//         Pair(Node node, int dist) {
+//             this.node = node;
+//             this.dist = dist;
+//         }
+//     }
+
+//     static void verticalTraversal(Node root) {
+//         TreeMap<Integer, Node> tm = new TreeMap<>();
+//         Queue<Pair> q = new LinkedList<>();
+//         q.add(new Pair(root, 0));
+//         while (!q.isEmpty()) {
+//             Pair p = q.poll();
+//             Node n = p.node;
+//             int dist = p.dist;
+//             tm.put(dist, n);
+//             if (n.left != null) {
+//                 q.add(new Pair(n.left, dist - 1));
+//             }
+//             if (n.right != null) {
+//                 q.add(new Pair(n.right, dist + 1));
+//             }
+//         }
+
+//         for (var i : tm.keySet()) {
+//             System.out.print(tm.get(i).data + " ");
+//         }
+//     }
+//     public static void main(String arg[]) {
+//         String s = "2 3 4 5 6 7 8 N 9 N N 12 N N -2 7";
+//         Node root = buildTree(s);
+//         System.out.println("\nPre-order Traversal: ");
+//         preorderTraversal(root);
+//         System.out.println("\nIn-order Traversal: ");
+//         inordertraversal(root);
+//         System.out.println("\nPost-order Traversal: ");    
+//         postorderTraversal(root);
+
+//         System.out.println("\nLevel-order Traversal: ");
+//         levelOrderTraversal(root);
+
+//         int height = maxHeight(root);
+//         System.out.println("\nMaximum height of the tree is: " + height);
+
+//         System.out.println("Boundary Traversal");
+//         boundaryTraversal(root);
+
+//         System.out.println("\nVertical Order Traversal: ");
+//         verticalTraversal(root);
+//     }
+// }
+
+import java.util.*;
+
+public class practise {
+
+    public static void main(String[] args) {
+        // ArrayList<Integer> arr = new ArrayList<>();
+        // System.out.println(arr.size());
+        // arr.add(2, 9);
+        // arr.add(1, 9);
+        HashMap<Integer, Integer> a = new HashMap<>();
+        a.put(3, 4);
+        System.out.println(a.get(3));
+        System.out.println(a.get(4));
     }
 }

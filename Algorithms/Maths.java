@@ -256,5 +256,29 @@ public class Maths {
 */
 
 /* 
-
+10. Determine whether an integer is a palindrome. Do this without extra space.
 */
+
+public class Maths {
+    static boolean checkPalindrome(int n) {
+        int div = 1;
+        while (n / div >= 10)
+            div *= 10;
+
+        while (n != 0) {
+            int l = n / div;
+            int r = n % 10;
+            if (l != r)
+            return false;
+            n = (n % div) / 10;
+            div = div / 100;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        int n = 15;
+        boolean isPalindrome = checkPalindrome(n);
+        System.out.println(isPalindrome);
+    }
+}

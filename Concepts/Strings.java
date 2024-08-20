@@ -96,7 +96,6 @@ public class Strings {
         String s = String.join(" $", st);
         System.out.println(s);
 
-
         System.out.println("\n\nString Builder:");
         StringBuilder s3 = new StringBuilder("Hello Libin");
         System.out.println(s3);
@@ -307,6 +306,40 @@ o/p: dcapb -> 5
 
 import java.util.*;
 public class Strings {
+
+    public int lengthOfLongestDistinctSubstring(String s) {
+        int n = s.length();
+        boolean[] exists = new boolean[256];
+        int i = 0;
+        int maxLen = 0;
+        for(int j=0; j<n; j++) {
+            while(exists[s.charAt(j)]){
+                exists[s.charAt(i)] = false;
+                i++;
+            }
+            exists[s.charAt(j)] = true;
+            maxLen = Math.max(maxLen, j-i+1);
+        }
+        return maxLen;
+    }
+        
+    public int lengthOfLongestDistinctSubstring(String s) {
+        int n = s.length();
+        int i=0;
+        int[] lastIndex = new int[256];
+        Arrays.fill(lastIndex, -1);
+        int maxLen = 0;
+        for(int j=0; j<n; j++){
+            if(lastIndex[s.charAt(j)] >= i)
+                i = lastIndex[s.charAt(j)] + 1;
+            
+            lastIndex[s.charAt(j)] = j;
+            maxLen = Math.max(maxLen, (j-i+1));
+        }
+
+        return maxLen;
+    }
+
     static String longestDistinctSubstring(String s) {
         int ans = 0;
         int[] ind = new int[256]; // to store previous index of a character.
