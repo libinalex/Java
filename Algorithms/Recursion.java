@@ -2,7 +2,6 @@ import java.util.*;
 /*
 1. Print first N natural numbers.
 
-
 public class Recursion {
 
     public static void printNum(int n) {
@@ -43,7 +42,6 @@ public class Recursion {
 */
 
 /* 3. Print sum of first n natural numbers. 
-import java.util.Scanner;
 
 public class Recursion {
 
@@ -53,7 +51,6 @@ public class Recursion {
         }
 
         return (num + sum(num - 1));
-
     }
 
     public static void main(String[] args) {
@@ -107,14 +104,12 @@ public class Recursion {
         System.out.println("Enter the position: ");
         int num = sc.nextInt();
         System.out.println("The "+ num + "th element of the Fibonacci sequence is: " + Fibonacci(num));
-        
     }
 }
 */
 
 /* 
 6. Find power of a number
-
 
 public class Recursion {
 
@@ -162,7 +157,6 @@ public class Recursion {
         if (b == 0)
             return a;
         return GCD(b, a%b);
-        
     }
 
     public static void main(String[] args) {
@@ -195,7 +189,35 @@ public class Recursion {
 */
 
 /* 
-10. Generate all subsets/subsequences of a string
+10. Tower of Hanoi
+
+public class Recursion {
+    
+static void towerOfHanoi(int numDisks, String source, String auxiliary, String destination) {
+    if (numDisks == 0) {
+        return;
+    }
+    // if (numDisks == 1) {
+        //     System.out.println("Move disk 1 from " + source + " to " + destination);
+        //     return;
+        // }
+        towerOfHanoi(numDisks - 1, source, destination, auxiliary);
+        System.out.println("Move disk " + numDisks + " from " + source + " to " + destination);
+        towerOfHanoi(numDisks - 1, auxiliary, source, destination);
+    }
+    
+    public static void main(String[] args) {
+        int numDisks = 3;
+        String source = "A";
+        String auxiliary = "B";
+        String destination = "C";
+        towerOfHanoi(numDisks, source, auxiliary, destination);
+    }
+}
+*/
+
+/* 
+11. Generate all subsets/subsequences of a string
 A string formed using original string by removing zero or more characters
 Subsequences of abc: "", a, b, c, ab, ac, bc, abc
 Logic: starting from empty string "", we either include a character or not at each step.
@@ -207,8 +229,8 @@ public class Recursion {
             set.add(curr);
             return;
         }
-        generateSubstringsUtil(str, i+1, curr, set);
-        generateSubstringsUtil(str, i+1, (curr + str.charAt(i)), set);
+        generateSubstringsUtil(str, i+1, curr, set); // not take
+        generateSubstringsUtil(str, i+1, (curr + str.charAt(i)), set); // take
     }
     static void generateSubstrings(String str) {
         Set<String> set = new HashSet<>();
@@ -220,35 +242,6 @@ public class Recursion {
     public static void main(String[] args) {
         String str = "libin";
         generateSubstrings(str);
-    }
-}
-*/
-
-/* 
-11. Tower of Hanoi
-
-
-public class Recursion {
-
-    static void towerOfHanoi(int numDisks, String source, String auxiliary, String destination) {
-        if (numDisks == 0) {
-            return;
-        }
-        // if (numDisks == 1) {
-        //     System.out.println("Move disk 1 from " + source + " to " + destination);
-        //     return;
-        // }
-        towerOfHanoi(numDisks - 1, source, destination, auxiliary);
-        System.out.println("Move disk " + numDisks + " from " + source + " to " + destination);
-        towerOfHanoi(numDisks - 1, auxiliary, source, destination);
-    }
-
-    public static void main(String[] args) {
-        int numDisks = 3;
-        String source = "A";
-        String auxiliary = "B";
-        String destination = "C";
-        towerOfHanoi(numDisks, source, auxiliary, destination);
     }
 }
 */
@@ -293,7 +286,7 @@ public class Recursion {
         l.add(arr[i]);
         printAllSubsequences(l, arr, i + 1);
         l.remove(l.size() - 1);
-        printAllSubsequences(l, arr, i+1);
+        printAllSubsequences(l, arr, i + 1);
     }
 
     public static void main(String[] args) {
@@ -312,7 +305,6 @@ public class Recursion {
 
 /* 
 13. Print all the subsequences whose sum is equal to a given no. k
-
 
 public class Recursion {
     static void subsequenceSum(Stack<Integer> list, int[] arr, int k, int i, int sum){
@@ -341,6 +333,7 @@ public class Recursion {
     }
 }
 */
+
 /*
 14. Print just one of the subsequences of an array whose sum is equal to a given no. k
 Logic: In base case, if condition is satisfied, return true. Else, return false.

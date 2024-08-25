@@ -25,7 +25,7 @@ public class Searching {
                 return binarySearchRecursive(arr, 0, mid - 1, key);
             else if (key > arr[mid])
                 return binarySearchRecursive(arr, mid, end, key);
-            }
+        }
         return -1;
     }
     public static void main(String[] args) {

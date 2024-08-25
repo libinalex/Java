@@ -102,11 +102,14 @@ public class Concepts {
             return 0;
 
         int left_height = isBalancedUtil(node.left);
-        int right_height = isBalancedUtil(node.right);
-        if (left_height == -1 || right_height == -1)
+        if (left_height == -1) // will check if left subtree is hight balanced
             return -1;
 
-        if(Math.abs(left_height - right_height) >1)
+        int right_height = isBalancedUtil(node.right);
+        if (right_height == -1)
+            return -1;
+
+        if(Math.abs(left_height - right_height) > 1)
             return -1;
 
         return 1 + Math.max(left_height, right_height);

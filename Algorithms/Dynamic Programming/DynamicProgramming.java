@@ -2,7 +2,7 @@ import java.util.*;
 /* 
 Overlapping sub problems.
 top down - can we divide the big problem into smaller sub problem -> Recursion + Memoization
-bottom up - if we know solution to smaller problem, can we find and to bigger problem -> Tabulation
+bottom up - if we know solution to smaller problem, can we find solution to bigger problem -> Tabulation
 
 Top-Down Memoization technique uses an extra recursion stack space, so space complexity is more.
 
@@ -13,7 +13,7 @@ Problems like:
 
 Whenever "Try all possible ways" --> Recursion
 
-To write recurrance reln of a problem:
+To write recurrance relation of a problem:
     1. Try to represent the problem in terms of index.
     2. Do all possible stuffs on that index according to the problem statement.
     3. If ques asks:
