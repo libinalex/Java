@@ -1,4 +1,11 @@
 /* 
+Any bit XOR with 0 -> returns same bit
+Any bit XOR with 1 -> toggle the bit
+To know which bit is present at a position -> AND it with 1
+
+*/
+
+/* 
 1. Bitwise Operators:
 
 
@@ -7,6 +14,8 @@ public class BitManipulation {
     public static void main(String[] args) {
         int a = 4;
         int b = 3;
+        System.out.println("a: " + Integer.toBinaryString(a));
+        System.out.println("b: " + Integer.toBinaryString(b));
         System.out.println(a|b);
         System.out.println(a&b);
         System.out.println(a^b);
@@ -20,6 +29,7 @@ public class BitManipulation {
 2. Convert Decimal to Binary and vice versa
 
 public class BitManipulation {
+
     static int decimalToBinary(int dec) {
         String a = Integer.toBinaryString(dec);
         return Integer.parseInt(a);
@@ -51,7 +61,6 @@ public class BitManipulation {
 3. Find ith bit
 Logic: Make a mask and perform AND operation
 
-
 public class BitManipulation {
     static int ithBit(int n, int i) {
         int mask = 1 << i;
@@ -74,7 +83,6 @@ public class BitManipulation {
 4. Toggle ith bit
 Logic: Create mask and perform XOR
 
-
 public class BitManipulation {
     static int toggleBit(int n, int i) {
         int mask = 1 << i;
@@ -95,7 +103,6 @@ public class BitManipulation {
 
 /* 
 5. Set/Clear the ith bit
-
 
 public class BitManipulation {
     static int setBit(int n, int i) {

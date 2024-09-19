@@ -1,22 +1,47 @@
 /*
-public class Basics {
-    
-}
+A class is a collection of data members and methods.
+An object is an instance of a class.
 */
 
-
-// static keyword:
+/*
+static keyword
+- static keyword can be used for data members, methods and inner classes(a class within a class)
+- static keyword cannot be used for top level class(outer class)
+static keyword cannot be used for local variables(declared within a method)
+- static members are accessible directly with the class name without creating objects.
+- objects can also access static members.
+- A static variable acts as a global varible within class, means all objects of the class can access static variable memory.
+*/
 /*
 class Student {
-    String name;
-    static String school;
+    String name; // instance variable or non-static variable
+    static String school; // class variable or static variable
+
+    void setData1() { // class method or non-static method
+        name = "Libin";
+        school = "St. Teresa";
+    }
+
+    static void setData2() { // class method or non-static method
+        // name = "Libin"; -> error: non-static variable name cannot be referenced from a static context
+        school = "St. Teresa's School";
+    }
+
+    void display() {
+        System.out.println("Name: " + name + ", School name: " + school);
+    }
 }
 
 public class Basics {
     public static void main(String[] args) {
-        Student.school = "St. Teresa's School"; //  directly by class name
         Student s1 = new Student();
-        System.out.println(Student.school);
+        s1.setData1();
+        s1.display();
+        
+        Student s2 = new Student();
+        s2.display(); // name will be default, but school will have the common value.
+        Student.school = "St. Anslems's School"; //  directly accessed by class name
+        s1.display();
     }
 }
 */
@@ -33,7 +58,7 @@ Common usage of this are as follows:
 • this can be passed as an argument in the method call
 Note: Name collision over instance and local variable in a method can be resolved by 'this'
 */
-// Name collision of instant variable over local variable
+// Name collision of instance variable over local variable
 /*
 class Student {
     String regno;
@@ -107,7 +132,7 @@ class Student {
     }
 
     void display() {
-        this.greet();   // optional  --> Even if you'd used only greet(), still same result
+        this.greet();   // here 'this' is optional  --> Even if you'd used only greet(), still same result
         System.out.println(regno + " " + name + " " + fee + "\n");
     }
 }
@@ -153,6 +178,7 @@ public class Basics {
     }
 }
 */
+
 /*
 // this keyword can be used to return current class instance
 class Basics {
@@ -208,19 +234,90 @@ public class Basics {
 }
 */
 
-/*
-Access modifiers
-• private - same class only
-• public - everywhere
-• protected - same class, same package, any subclass
-• (default) - same class, same package
-*/
+
 
 /*
-Final keyword
+Access modifiers
+• private
+    - A class cannot be private
+    - can be used for data members, methods and inner classes
+    - accessible only within the same class
+
+• public
+    - A class can be public
+    - accessible everywhere
+    - If class is public then name of the source code file should be same as the class name
+    - In a source code file, we can have only one public class
+
+• protected
+    - A class cannot be protected
+    - can be used for data members, methods and inner classes
+    - accessible within the same package and subclass of another package
+
+• default(no need to specify)
+    - A class can be default
+    - accessible only within the same package
+
+Non-Access modifiers
+• static
+• final
+• abstract
+• transient
+• synchronized
+
+- Only final modifier is allowed for local variables
+*/
+
+/* 
+Encapsula tion
+- The wrapping up of data members and methods together into a container called class
+and by providing security to data(use private for data members) is called Encapsulation.
+A class is fully encapsulated(secured) when all data members are private
+*/
+
+
+/*
+final keyword
 Variables: to create Constants
 Classes: To prevent Inheritance
 Methods: To prevent Method overriding 
 
+Predefined final classes in java:
+- System 
+- String
+- Math
+Wrapper classes:-
+- Byte
+- Short
+- Character
+- Integer
+- Long
+- Float
+- Double
+- Boolean
+
+class MyClass extends String{} // error: cannot inherit from final String class ; cannot create subclass of a final class
+
 */
 
+/* 
+Inner Classes
+- A class within a class is called inner class.
+
+class Outer {
+    int n = 100;
+
+    class Inner {
+        void doStuff() {
+            System.out.println("Value of n is: " + n);
+        }
+    }
+}
+public class Basics {
+
+    public static void main(String[] args) {
+        Outer.Inner innerObj = new Outer().new Inner();
+        innerObj.doStuff();
+    }
+}
+*/

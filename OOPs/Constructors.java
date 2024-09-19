@@ -1,5 +1,11 @@
 /*
 A member function used to initialise an object while creating it.
+Does not return anything, not even void.
+
+- If a class does not contain a constructor, Java creates a default constructor(no arguments constructor)
+- If a class contains parameterized constructor, then it is the responsibility of the programmer to create default constructor in the class.
+
+
 
 Type of Constructor:
 • Default Constructor
@@ -40,7 +46,7 @@ public class Constructors {
         Employee E1 = new Employee();
         Employee E2 = new Employee(102, "Ravi");
         Employee E3 = new Employee(E2);         // Copy Constructor
-        Employee E4 = E2;                       // Copy Constructor
+        Employee E4 = E1;                       // Copy Constructor
         
         E1.printInfo();
         E2.printInfo();

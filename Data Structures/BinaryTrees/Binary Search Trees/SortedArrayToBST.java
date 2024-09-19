@@ -14,8 +14,7 @@ Converted a given sorted Array into a Height balanced Binary Search Tree.
 
 */
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class SortedArrayToBST {
     static class Node {

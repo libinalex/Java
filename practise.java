@@ -1,21 +1,32 @@
 
-
 import java.util.*;
 
 public class practise {
-    static int binarySearch_Recursion(int[] arr, int k, int low, int high) {
-        
-    }
-    public static void main(String[] args) {
-        int[] arr = { 2, 4, 7, 9, 12, 18, 24, 35, 42, 53 };
-        int k = 2;
-        int index = binarySearch_Recursion(arr, k);
-        // int index = binarySearch_Iteration(arr, k);
-        // int index = Arrays.binarySearch(arr, k);
+    // practise(float a) {
+    // System.out.println("Float " + a);
+    // }
 
-        if(index>=0)
-            System.out.println("The key " + k + " is present at index: " + index + " int the given list.");
-        else    
-            System.out.println("The key " + k + " is NOT present in the given list.");
+    // practise(double a) {
+    // System.out.println("Double " + a);
+    // }
+
+    public static void main(String[] args) {
+        String str = "aaaa";
+        String findStr = "a";
+        int lastIndex = 0;
+        int count = 0;
+
+        while (lastIndex != -1) {
+            lastIndex = str.indexOf(findStr, lastIndex);
+            
+            if (lastIndex != -1) {
+                count++;
+                lastIndex += findStr.length();
+            }
+
+        }
+        System.out.println(count);
+
     }
 }
+

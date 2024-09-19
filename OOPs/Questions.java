@@ -26,7 +26,7 @@ Expected output
 Eligibility: Bio-Science with Maths
 */
 /* 
-public class IPS {
+public class Questions {
 
 }
 */
@@ -74,14 +74,14 @@ class Student {
     }
 }
 
-public class IPS {
+public class Questions {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of Students: ");
         int n = sc.nextInt();
 
         Student S[] = new Student[n];
-        
+
         for (int i = 0; i < n; i++) {
             S[i] = new Student();
             S[i].input();
@@ -90,7 +90,6 @@ public class IPS {
         for (int i = 0; i < n; i++) {
             S[i].display();
         }
-
 
     }
 }

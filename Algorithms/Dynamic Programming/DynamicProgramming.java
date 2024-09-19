@@ -196,7 +196,7 @@ public class DynamicProgramming {
         return dp[n] = Math.min(oneStep, twoStep);
     }
 
-    static int frogJump_Recursion(int n, int[] height) {
+    static int frogJump_Recursion(int n, int[] height) { // minimum enery to reach stair n
         if (n == 0) 
             return 0;
         if(n == 1)

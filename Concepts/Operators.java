@@ -40,3 +40,19 @@ Assignment	         assignment	            = += -= *= /= %= &= ^= |= <<= >>= >>>
 */
 
 
+/**
+ * Operators
+ */
+public class Operators {
+
+    public static void main(String[] args) {
+        int a = 12;
+        int b = 7;
+        int c = 16;
+
+        // Using ternary operator to find maximum of three numbers:
+        int largest = (a > b && a > c) ? a : (b > c) ? b : c;
+        
+        System.out.println("Largest among the three numbers is: " + largest);
+    }
+}
