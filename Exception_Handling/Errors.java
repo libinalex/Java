@@ -10,42 +10,71 @@ An exception is an event that occurs when a program is executed disrupting the n
 
 
 Types of Errors
-• There are three types of errors in the code:
-• Syntax Error: A syntax error may appear if there is any mistake in the pre-defined syntax of a programming language.
-• Runtime Error: When an error occurs during the execution of the program, such an error is known as Runtime error. The codes which create runtime errors are known as Exceptions.
-Thus, exception handlers are used for handling runtime errors.
-• Logical Error: Logical mistake in the program that may not produce the desired output, and may terminate unusually.
+There are three types of errors in the code:
+• Syntax Error /  Compile time error: 
+    - A syntax error may appear if there is any mistake in the pre-defined syntax of a programming language.
 
-Runtime Exception -> Unchecked Exception -> Arithmetic, NullPoint, IndexOutOfBound, NumberFormat
-Compile Exception -> Checked Exception -> IO, SQL, ClassNotFound
+• Runtime Error / Exception: 
+    - When an error occurs during the execution of the program, such an error is known as Runtime error. 
+    - The codes which create runtime errors are known as Exceptions.
+    - Thus, exception handlers are used for handling runtime errors.
+    - An exception is a runtime error which occurs during program execution and terminates the program abnormally.
+
+• Logical / Semantic Error : 
+    - Logical mistake in the program that may not produce the desired output, and may terminate unusually.
+
+
+Exception Hierarchy:
+Serializable(interface) 
+Object -> Throwable -> Exception, Error:
+
+Categories of Exceptions:
+- Unchecked Exceptions / Runtime Exception
+    - All RuntimeExceptions are unchecked exceptions
+        - ArithematicException
+        - NumberFormatException
+        - NullPointerException
+        - ArrayIndexOutOfBoundsException, et.
+    - has to be taken care by developers.
+
+- Checked Exceptions / Compile time Exception
+    - Other than Runtime Exceptions, are all Checked Exceptions.
+        - IOException
+        - SQLException
+        - ClassNotFoundException
+        - BrokenBarrierException, 
+        - User Defined Exceptions, etc.
+    - Taken care by compiler, just follow syntax rule.
+    
+Categories of Error:
+- ThreadDeath; VirtualMachineError: OutOfMemoryError, StackOverflowError; IOError
 
 */
 
-
-
+/*
 import java.util.Scanner;
 
 public class Errors {
     public static void main(String[] args) {
 
         // Syntax Errors
-        /*
+        
         int a = 8                   --> Semi-colon missing;
         b = 9;                      --> data-type not defined;
         
         IDE can help resolve such syntax errors.
-        */
+        
 
         // Logical Errors
         // Program to print all prime numbers between 1 - 10
-        /*
+        
         System.out.println(2);
         for (int i = 1; i < 5; i++) {
             System.out.println(2*i+1);      ---->  The logic to calcultate prime numbers is wrong. This will print 9 also which is not a prime no. This logic prints the odd no. and not prime no.
         }
-        */
+        
 
-        // Runtime Errors:
+        // Runtime Errors / Exceptions:
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a number: ");
         int k = sc.nextInt();
@@ -58,25 +87,39 @@ public class Errors {
         // ArithmeticException: / by zero    ,   InputMismatchException
     }
 }
-
+*/
 
 /*
 Examples of Run-time exception:
-1. int a = 1000/0;    // ArithmeticException
+1. ArithmeticException
+    int a = 1000/0;    
 
-2. String s = null;
-   System.out.println(s.length());     // NullPointerException
+2. NullPointerException
+    String s = null;
+    System.out.println(s.length());      
 
-3. String s = "abc";
-   int i=Integer.parseInt(s);      // NumberFormatException
+3. NumberFormatException
+    String s = "abc";
+    int i = Integer.parseInt(s);     
 
-4. int a[] = new int[5];
-   a[10]=50;       // ArrayIndexOutOfBoundsException
+4. ArrayIndexOutOfBoundsException
+    int a[] = new int[5];
+    a[10]=50;  
+    
+5. StringIndexOutOfBoundsException
+    String str = "Hello";
+    System.out.println(str.charAt(8));
+
+6. NegativeArraySizeException
+    int[] arr = new int[-5];
+
 */
 
 /*
 Exception Handling:
-Java provides five keywords that are used to handle the exception. The following table describes each.
+- Exception handling is used to avoid the abnormal termination of application/program and makes the program Robust.
+
+- Java provides five keywords that are used to handle the exception. The following table describes each.
 
 Keyword	                                  Description
 
@@ -93,4 +136,44 @@ throw	        The "throw" keyword is used to throw an exception.
 
 throws	        The "throws" keyword is used to declare exceptions. It specifies that there may occur 
                 an exception in the method. It doesn't throw an exception. It is always used with method signature.
+*/
+
+/* 
+Exception Propagation
+If the exception is unable to handle in a method then it is propagated to the method where it has been invoked
+eg.
+main(){
+    void xxx(){...}
+    try{
+        xxx();
+    } catch(Exception e) {}
+    
+    void yyy(){
+        xxx();
+    }
+}
+*/
+
+/* 
+Exceptions in Inheritance
+- The overriden method should not throw the exception which is super class of the base class method exception.
+- If the Base class method is not throwing any exception then the overriden method should also not throw any exception
+*/
+
+/*
+import java.io.IOException;
+
+class Base {
+    void method1() throws IOException {
+    }
+}
+
+class Derived extends Base {
+    // @Override
+    // void method1() throws IOException {} // valid
+    // void method1() throws ArithmeticException {} // valid
+    // void method1() {} // valid
+    // void method1() throws Exception {} // error: Exception is super class of IOException
+
+}
 */

@@ -1,3 +1,36 @@
+/* 
+Handeling Checked Exceptions:
+- Other than Runtime Exception, other exceptions like IOException, SQLException, user defined exceptinos, etc. are Checked exceptions
+- If a method throws an exception then this method needs to be caught (try-catch)
+  or declared to be thrown (throws)
+
+
+import java.io.IOException;
+
+public class Throw_Throws {
+    public static void main(String[] args) throws IOException {
+        // int n = System.in.read(); // error: unreported exception IOException; must be caught or declared to be thrown
+        
+        // #1: 
+        try {
+            int n = System.in.read();
+            System.out.println(n);
+        } catch (IOException e) {
+                
+        }
+
+        int n = System.in.read();
+        System.out.println(n);
+        System.out.println("End of Program");
+    }
+}
+ 
+If a method definition has throws Exception
+Here, the read method in API, library has throws IOException {Ctrl+click on read()}
+#1: Surround with try-catch
+#2: Add throws declaration
+
+*/
 
 /*
 throw syntax

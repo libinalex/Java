@@ -52,7 +52,7 @@ toUpperCase()	Converts a string to upper case letters	                          
 trim()	        Removes whitespace from both ends of a string	                        String
 valueOf()   	Returns the string representation of the specified value            	String
 
-IN all these methods, the original string the same as Strings are immutable
+In all these methods, the original string remains the same, as Strings are immutable
 */
 
 /* 
@@ -105,6 +105,11 @@ public class Strings {
         System.out.println("Replace: " + s3.replace(16, 17, " Ji!"));
         System.out.println("Reverse: " + s3.reverse());
         System.out.println(s3);
+
+        // to convert other data types to String: use valueOf() method, which is a static method from String class
+        double a = 54.56;
+        String s_a = String.valueOf(a); // static method, so referenced directly by class name
+        System.out.println("Converting other data types to String: " + s_a);
     }
 }
 

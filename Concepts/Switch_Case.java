@@ -1,5 +1,7 @@
 import java.util.*;
 
+/*
+// To perform various arithematic operations
 public class Switch_Case {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -45,4 +47,35 @@ public class Switch_Case {
         } while (ch == 'Y');
         System.out.println("The END!");
     }
+}
+*/
+
+// To check if a given input character is vowel or consonant
+
+public class Switch_Case {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a character: ");
+        char ch = sc.next().toLowerCase().charAt(0);
+        // ch = Character.toLowerCase(ch);
+        if (Character.isAlphabetic(ch)) {
+
+            switch (ch) {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    System.out.println("Vowel");
+                    break;
+                default:
+                    System.out.println("Consonant");
+            }
+        }
+        else {
+            System.out.println("Given input is not an English Alphabet");
+        }
+
+    }
+    
 }

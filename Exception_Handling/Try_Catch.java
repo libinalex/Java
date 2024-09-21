@@ -1,3 +1,52 @@
+
+/*
+// try-catch block
+public class Exception_Handling {
+    public static void main(String args[]) {
+        System.out.println("Begining the program");
+        try {
+            int data = 100 / 0;
+            System.out.println("Data = " + data);
+        } catch (ArithmeticException e) {
+            System.out.println(e);
+            System.err.println("Divide by 0 not allowed"); // .err will display this msg in red color
+        }
+        System.out.println("rest of the code...");
+        int A = 10, B = 5;
+        System.out.println(A + B);
+        System.out.println("Code successfully executed");
+    }
+}
+*/
+
+/* 
+If an exception occurs in try block, the Java runtime will throw an exception which is caught by catch block and handles the exception and the remaining part of try block will not get executed
+*/
+
+/* 
+// Multiple catch statements:
+- The order of catch blocks cannot be from super class to sub class
+
+public class Exception_Handling {
+    public static void main(String[] args) {
+        try {
+            int a[] = new int[5];
+            System.out.println(a[10]);
+            System.out.println(a[4] / 0);
+        } catch (ArithmeticException e) {
+            System.out.println("Arithmetic Exception Occured");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("ArrayIndexOutOfBounds Exception Occured");
+        } catch (RuntimeException e) {
+            System.out.println("Runtime Exception Occured");
+        } catch (Exception e) {
+            System.out.println("Parent Exception Occured");
+        }
+        System.out.println("Rest of the code...");
+    }
+}
+*/
+
 /*
 
 public class Try_Catch {

@@ -29,7 +29,7 @@ Type casting:
 Implicit: converting lower to higher data type
 Explicit: converting higher to lower data type
 */
-
+/*
 public class Basics {
     int var1; // data member
     String s; // data member
@@ -68,5 +68,79 @@ public class Basics {
         System.out.println(f1 + " " + f2);
         
 
+    }
+}
+*/
+
+
+/* 
+java.lang package 
+- imported implicitly to all java programs
+
+Classes under java.lang package:
+• Object
+    - topmost class in Java Hierarchy
+    - Every class in java is a subclass of Object class
+    
+• String
+    - A collection of characters
+    - In java, String is immutable
+
+    String str = "hello"; -> "hello" created in Heap memory, and str refers to it {in java, objects get created in heap memory}
+    str = "World"; -> a new object "World gets created and now str points to this, "hello" is still present in memory as it is immutable, but is no longer referenced
+
+    - The objects which are no longer referenced are ready for garbage collection and these objects will be destroyed during garbage collection process by the garbage collector.
+    - Java has automatic garbage collection.
+
+• StringBuilder 
+    - is mutable
+    - methods present in StringBuilder are not synchronized 
+
+• StringBuffer
+    - is mutable
+    - methods present in StringBuffer are synchronized (only 1 thread will be running)
+
+• System
+• Math
+
+Wrapper classes
+    - For every primitive data type, there is a corresponding reference data type called as wrapper class
+    - They are immutable
+    - They are final, so we cannot create subclasses for wrapper classes
+    - Used to convert reference type into primitive type called as parsing
+• Byte
+• Short
+• Character
+• Integer
+• Long
+• Float
+• Double
+• Boolean
+
+eg. convert String into int or double:
+String s1 = "565";
+int n1 = Integer.parseInt(s1); 
+
+String s2 = "53.345";
+double n2 = Double.parseDouble(s2);
+
+
+*/
+/* 
+String[] args is used to store command line arguments
+Eg. in cmd:
+> javac Basics.java // Compilation: conversion to byte code(.class file)
+> java Basics Hello World
+=> Here "Hello" and "World" are command line arguments
+args[0] = "Hello" 
+args[1] = "World" 
+*/
+
+public class Basics {
+    public static void main(String[] args) {
+        String s1 = args[0];
+        String s2 = args[1];
+        System.out.println(s1 + " " + s2);
+        
     }
 }
