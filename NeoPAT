@@ -1,67 +1,47 @@
 public class NeoPAT {
     
 }
-
+/*
 Carrom
 
-A board
-game called
-Carrom is
-played by
-
-two players (teams). It is made up of a red coin, nine black coins, and nine white coins. The first team to spend every
-
-coin wins (given that the red has been pocketed by one of the teams). The number of leftover coins from the losing team on the board determines how many points are given. The winning team receives an additional 5 points if they have successfully pocketed the red.
+A board game called Carrom is played by two players (teams). It is made up of a red coin, nine black coins, and nine white coins. The first team to spend every coin wins (given that the red has been pocketed by one of the teams). The number of leftover coins from the losing team on the board determines how many points are given. The winning team receives an additional 5 points if they have successfully pocketed the red.
 
 
 Write a program to calculate the final round winners score.
-
-    Display the total points ,the winning team receives an additional 5 points if they have successfully pocketed
-
-the red (character(r))
-    Display "Invalid Input" if there are less than one or more than nine coins still on the board.
+Display the total points ,the winning team receives an additional 5 points if they have successfully pocketed the red (character(r))
+Display "Invalid Input" if there are less than one or more than nine coins still on the board.
 
 Input format :
-
 The first line of the input consists of an integer.
-
 The second line of the input consists of the character (r).
-Output format :
 
+Output format :
 The output displays the number that corresponds to the total points won.
 
-
-Refer to the sample input and output for format specifications.
 Sample test cases :
 Input 1 :
-
 5
 r
 
 Output 1 :
-
 10
 
 Input 2 :
-
 2
 n
 
 Output 2 :
-
 2
 
 Input 3 :
-
 -1
 
 Output 3 :
-
 Invalid Input
-
+*/
 import java.io.*;
 import java.util.*;
-class Carrom {
+class NeoPAT {
 	public static void main(String [] args) {
 		int number;
 		char c;

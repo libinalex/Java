@@ -1,14 +1,9 @@
 /*
 A company has hired three types of salespersons, A, B and C. Write a Java program using inheritance, constructor, and overloading/overriding to perform the following: 
-
 Create appropriate superclass and sub-classes. Initialize data members for the product with Product Id  =P01, Price=10000, and Quantity (get input) using a constructor.
-
 The salesmen will give a single discount (10%), and a double discount (an additional 5% after discounting 10% if quantity >=50) depending on the quantity demanded. Use overload methods Disc(int), and Disc(int,int) to calculate the single discount and double discount. Calculate and display the amount to be paid by the customer after getting discounts on the price of the product.
-
 Compute the total amount of sales of each salesperson type. A cash prize of Rs.1000 will be awarded to the salesperson who sold the highest amount.
-
 Compute the total commission for each salesperson if the commission rate is 2% for type ‘A’ 1.5% for type ‘B’ and 1% for type ‘C’.
-
 Find the total income for each salesperson for a day if each salesperson receives a fixed salary of Rs. 700 per day in addition to commission payments and the award amount.
 
 A

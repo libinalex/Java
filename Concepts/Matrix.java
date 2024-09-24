@@ -219,7 +219,7 @@ public class Matrix {
 }
 
 /* 
-5. Interchange the diogonal elements:
+5. Interchange the diagonal elements:
 import java.util.*;
 public class Array2D {
     public static void main(String[] args) {

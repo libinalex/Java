@@ -27,5 +27,6 @@ public class GuessTheNumber {
         } while (num != random);
         
         System.out.println("Your number of guesses: " + count);
+        sc.close();
     }
 }

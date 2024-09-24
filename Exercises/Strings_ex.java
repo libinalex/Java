@@ -6,6 +6,7 @@ public class Strings_ex {
         System.out.println(a+2);
         System.out.println(Integer.parseInt(x) + 2);
         System.out.println(Integer.toString(a) + 2);
+        System.out.println(String.valueOf(a) + 2);
     }
 }
 

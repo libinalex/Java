@@ -1,7 +1,7 @@
 /* 
 Non static blocks : code written within { }, 
     is executed for each object that is created.
-    is exeted before the constructor's execution
+    is executed before the constructor's execution
 */
 
 class A {
