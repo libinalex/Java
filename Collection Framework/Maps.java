@@ -1,22 +1,27 @@
 
 /*
-Map:
-Does not extend collection.
-map is an interface.
-A Map is an object that maps keys to values -> entry(key,value)
-Provides methods for storing values based on key basis.
-A map cannot contain duplicate keys.
-Data is accessed using keys.
-Order is not maintained
-Each key can map to at most one value. It models the mathematical function abstraction.
-methods to iterater through the Map: keySet(), values(), entrySet()
+- Map is used to collect elements in form of key-value pair
+- Map does not allow duplicate keys
 
-
-Container object stores key/value pairs
+Classes under Map interface:
 3 Concrete Interfaces:
 • HashMap -> data stord in no particular order
 • LinkedHashMap -> data is stored in order of insertion
 • TreeMap   -> data stored in sorted order according to key
+
+
+- Does not extend Collection.
+- Map is an interface.
+- A Map is an object that maps keys to values -> entry(key,value)
+- Provides methods for storing values based on key basis.
+- A map cannot contain duplicate keys.
+- Data is accessed using keys.
+- Order is not maintained
+- Each key can map to at most one value. It models the mathematical function abstraction.
+- Methods to iterater through the Map: keySet(), values(), entrySet()
+
+
+Container object stores key/value pairs
 
 
 HashMap can contain one null key, but TreeMap cannot contain null keys 
@@ -27,11 +32,41 @@ containsKey(k)
 containsValue(v)
 remove(k)
 
+Methods in Java Map Interface:
+
+put(Object, Object)	
+get(Object)	
+containsKey(Object)
+containsValue(Object)	
+remove(Object)	
+entrySet()	
+clear()	
+equals(Object)	
+hashCode()	
+isEmpty()	
+keySet()	
+putAll(Map)	
+size()	
+values()	
+getOrDefault(Object key, V defaultValue)	
+merge(K key, V value, BiFunction<? super V,? super V,? extends V> remappingFunction)
+putIfAbsent(K key, V value)
+
+
+To Iterate in maps:
+- Get the keys of the Map into a Set
+- Iterate the keys present in Set(Set is Collection so iteration using enhanced for loop possible)
+
+eg.
+HashMap<String, Integer> hm = new HashMap<>();
+Set<String> keys = hm.keySet();
+for(String k: keys)
+    sout(k + ": " + hm.get(k));
+
 */
 
 
-import java.util.Map;   // to use Map.Entry
-import java.util.*;
+import java.util.*;   // to use Map.Entry
 
 public class Maps {
     public static void main(String[] args) {

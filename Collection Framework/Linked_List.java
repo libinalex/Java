@@ -84,7 +84,7 @@ public class Linked_List {
         l1.add(5);
         l1.add(7);
         l1.addFirst(15);
-        l1.addFist(2);
+        l1.addFirst(2);
         l1.addLast(4);
         l1.add(1,7);
         l1.add(6);

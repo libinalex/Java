@@ -61,25 +61,27 @@ Collection Methods:
 12 contains(collection c)   -  It is used for searching. If elements of another collection are present in the collection or not. If present returns true or false.
 
 
-ArrayList Methods:
-1 get(object o)             -  It prints the value at a specific index.
-2 set(index, object o)      -  It updates the value. In that, we need to provide an index.
-3 add(index, object o)      -  It adds an element at a specific index.
-4 remove(Object o)          -  It removes elements at specific indexes.
-5 addAll(Collection c)      -  It is used to add another collection.
-6 removeAll(Collection c)   -  It is used to remove another collection.
+List Methods:
+1 boolean add(Object)        -  adds an element at last
+2 void add(int, Object)      -  adds an element at a specific index.
+3 void set(int, Object)      -  updates/modifies the element at given index
+4 Object get(int)            -  returns the element at given index.
+5 boolean remove(Object)     -  removes/deletes the given element.
+6 Object remove(int)         -  removes/deletes the elements at given indexe.
+7 addAll(Collection c)       -  add another collection.
+8 removeAll(Collection c)    -  remove another collection.
 
 Other Collections Methods:
-binarySearch(list, key)       -      Finds key in a sorted list using binary search.
-sort(list)    -       Sorts a list into ascending order.
-min(list)         Returns the smallest value in a list.
-max(list)         Returns the largest value in a list.
-reverse(list)     Reverses the order of elements in a list.
-shuffle(list)     Randomly rearranges the elements in a list.
-swap(list, p1, p2)          Exchanges the elements at index positions p1 and p2
-replaceAll(list, x1, x2)    Replaces all elements matching x1 with x2     
-fill(list, x1)           Fill all elements with x1.
-copy(des:x1, src:x2)     Copy one list to another list
+1 binarySearch(list, key)       Finds key in a sorted list using binary search.
+2 sort(list)        Sorts a list into ascending order.
+3 min(list)         Returns the smallest value in a list.
+4 max(list)         Returns the largest value in a list.
+5 reverse(list)     Reverses the order of elements in a list.
+6 shuffle(list)     Randomly rearranges the elements in a list.
+7 swap(list, p1, p2)          Exchanges the elements at index positions p1 and p2
+8 replaceAll(list, x1, x2)    Replaces all elements matching x1 with x2     
+9 fill(list, x1)              Fill all elements with x1.
+10 copy(des:x1, src:x2)       Copy one list to another list
 
 eg.     Collections.sort(al)
         Collections.max(al)

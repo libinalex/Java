@@ -1,11 +1,21 @@
 /*
+- Set is an unordered collection of elements
+- Set does not allow duplicate elements
+
+Classes under Set interface:
+- 3 Concrete Interfaces:
+• HashSet {O(n)} -> data in no particular order
+• LinkedHashSet -> data in order of insertion (LinkedList + Hash table)
+• TreeSet (impements SortedSet) {O(log n)}  -> data in sorted order (self-balancing BST{Red-Black Tree})
+
+
 HashSet:
-class that implements SET interface.
-duplicates are not allowed. thus, used when we want uniqueness.
-insertion order is not maintained, no indexing.
-best for search operations and data stored by hashing.
-data -> hash function -> hash code
-default clone of HashSet is Shallow clone
+- class that implements 'Set' interface.
+- duplicates are not allowed. Thus, used when we want uniqueness.
+- insertion order is not maintained, no indexing.
+- best for search operations and data stored by hashing.
+- data -> hash function -> hash code
+- default clone of HashSet is Shallow clone
 
 
 METHOD                 DESCRIPTION
@@ -21,7 +31,6 @@ clone()	            Used to create a shallow copy of the set.
 
 
 Methods inherited from class java.util.AbstractSet
-
 METHOD                  DESCRIPTION
 
 equals()	    Used to verify the equality of an Object with a HashSet and compare them. The list returns true only if both HashSet contains same elements, irrespective of order.
@@ -62,10 +71,6 @@ toArray()	                   Returns an array containing all of the elements in 
 toArray​(T[] a)	                Returns an array containing all of the elements in this set; the runtime type of the returned array is that of the specified array.
 
 
-3 Concrete Interfaces:
-• HashSet {O(n)} -> data in no particular order
-• LinkedHashSet -> data in order of insertion (LinkedList + Hash table)
-• TreeSet (impements SortedSet) {O(log n)}  -> data in sorted order (self-balancing BST{Red-Black Tree})
 
 
 TreeSet:
