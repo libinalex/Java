@@ -191,6 +191,7 @@ public class Abstraction {
 
 */
 
+/*
 interface Shape{
     void draw();
 
@@ -222,5 +223,52 @@ public class Abstraction {
         s.fill();
         Shape.map(); // accessing static method directly from interface name
     }
-    
+}
+*/
+
+/* 
+Functional Interface
+- The interface which contains only one abstract method but can hava multiple default and static methods is called as functional interface.
+- @FunctionalInterface annotation is used to mark the interface as functional interface
+- Eg.
+    - Runnable interface -> run()
+    - Comparator interface -> compare()
+    - Comparable interface -> compareTo()
+*/
+
+@FunctionalInterface
+interface Phone {
+    void call();
+    // void func();  -> error: @FunctionalInterface can have only 1 abstract method
+}
+
+// class AndroidPhone implements Phone {
+//     @Override
+//     public void call() {
+//         System.out.println("Calling");
+//     }
+// }
+
+ 
+// Here we're creating the subclass only to override the call() method.
+// Instead of doing this, we can make use of Anonymous Inner Class
+
+public class Abstraction {
+    public static void main(String[] args) {
+        // Phone p = new AndroidPhone();
+        
+        // Anonymous Inner Class
+        // Phone p = new Phone(){
+        //     public void call(){
+        //         System.out.println("Calling");
+        //     }
+        // };
+        
+        
+        // Using Lambda Expression
+        Phone p = () -> {System.out.println("Calling");};
+        
+        p.call();  // Calling 
+
+    } 
 }

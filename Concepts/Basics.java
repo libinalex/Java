@@ -183,3 +183,18 @@ We know that every class in java extends Object class, so the toString() method 
 
 Thus, in order to represent the object value in String or readable formet, we need to override toString() method in the class.
 */
+
+/* 
+Java 1.2 -> Collection API
+Java 1.5 -> Generics
+Java 1.8 -> Lambda
+
+Java 8 version features:
+- Define methods in interfaces
+- Define static methods in interfaces
+- Functional Interfaces
+- Lambda Expressions
+- forEach() method
+- Method Reference
+- Stream API
+*/
